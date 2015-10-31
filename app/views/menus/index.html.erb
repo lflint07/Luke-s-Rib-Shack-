@@ -1,0 +1,19 @@
+<h1>All of our Menu Items</h1>
+<div class="row">
+<% @menus.each do |menu| %>
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="<%= menu.image %>">
+      <div class="caption">
+        <h3><%= menu.item_name %></h3>
+        <h3>Cost: $<%= menu.cost %></h3>
+        <%= link_to "More Info", menu, class: "btn btn-default" %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
+
+<br>
+
+<%= link_to 'New Menu Item', new_menu_path, class: "btn btn-primary" %>
